@@ -5,10 +5,29 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vibe-social</title>
-    <script type="module" crossorigin src="/assets/index-ftqs-Ndh.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CBihWeJW.css">
+    <style>html, body { background-color: #0a0c12; color: white; }</style>
+    <script type="module" crossorigin src="/assets/index-BaTRr9gt.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B8xifktT.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      window.onerror = function(message, source, lineno, colno, error) {
+        const errorDiv = document.createElement('div');
+        errorDiv.style.position = 'fixed';
+        errorDiv.style.top = '0';
+        errorDiv.style.left = '0';
+        errorDiv.style.width = '100%';
+        errorDiv.style.backgroundColor = 'rgba(255,0,0,0.9)';
+        errorDiv.style.color = 'white';
+        errorDiv.style.zIndex = '999999';
+        errorDiv.style.padding = '20px';
+        errorDiv.style.fontFamily = 'monospace';
+        errorDiv.style.whiteSpace = 'pre-wrap';
+        errorDiv.innerHTML = `<h1>CRITICAL ERROR</h1><h3>${message}</h3><p>${source}:${lineno}:${colno}</p><pre>${error ? error.stack : ''}</pre>`;
+        document.body.appendChild(errorDiv);
+        console.error('Global Error Caught:', message, error);
+      };
+    </script>
   </body>
 </html>
