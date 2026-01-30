@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const WaterBackground = ({
     imageUrl = '/img/3.jpg',
     backgroundColor = '#0a0c12',
-    resolution = 0.6,
+    resolution = 1,
     animated = true
 }) => {
     const canvasRef = useRef(null);
