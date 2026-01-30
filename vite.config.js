@@ -10,7 +10,9 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/test/setup.js',
   },
-})  server: {
+
+  // ↓↓↓ sekcja server – DEV ONLY (nie wpływa na build/production)
+  server: {
     headers: {
       'Cross-Origin-Embedder-Policy': 'require-corp',
       'Cross-Origin-Opener-Policy': 'same-origin',
@@ -20,6 +22,6 @@ export default defineConfig({
         target: 'http://localhost:5000',
         changeOrigin: true,
       },
-    }
+    },
   },
 })
