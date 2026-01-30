@@ -1,0 +1,197 @@
+.shop-container {
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.shop-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.shop-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.package-card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cyan);
+}
+
+.package-card.highlight {
+    border: 1px solid var(--accent-cyan);
+    background: rgba(0, 210, 255, 0.05);
+}
+
+.package-card.premium {
+    border: 2px solid #ffcc33;
+    background: linear-gradient(135deg, rgba(255, 204, 51, 0.1) 0%, rgba(255, 102, 0, 0.1) 100%);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    background: #ffcc33;
+    color: black;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+/* Support Features List */
+.support-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.support-features li {
+    margin-bottom: 15px;
+    /* More spacing */
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+/* Price Tag */
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.pay-type {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+}
+
+/* Specific Feature Highlight for Absolute Tier */
+.absolute-tier {
+    grid-column: 1 / -1;
+    /* Full width on mobile/tablet if needed, but flex wrap is grid */
+    border: 2px solid transparent;
+    /* Prepare for gradient border */
+    background-image: linear-gradient(var(--glass-bg), var(--glass-bg)), var(--primary-gradient);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 0 0 30px rgba(121, 40, 202, 0.3);
+}
+
+.absolute-badge {
+    background: crimson;
+    color: white;
+    box-shadow: 0 0 10px crimson;
+}
+
+.rainbow-text {
+    animation: rainbow 5s infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        color: red;
+    }
+
+    20% {
+        color: yellow;
+    }
+
+    40% {
+        color: lime;
+    }
+
+    60% {
+        color: cyan;
+    }
+
+    80% {
+        color: magenta;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+/* Buttons */
+.support-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: black;
+    margin-top: auto;
+}
+
+.support-btn.red {
+    background: #ff6b6b;
+    color: white;
+}
+
+.support-btn.cyan {
+    background: var(--accent-cyan);
+}
+
+.support-btn.gold {
+    background: #ffd700;
+}
+
+.support-btn.purple {
+    background: #9d4edd;
+    color: white;
+}
+
+.support-btn.rainbow {
+    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, violet);
+    background-size: 400%;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    animation: gradientFlow 5s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.support-btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}

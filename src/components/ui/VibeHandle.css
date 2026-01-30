@@ -1,0 +1,40 @@
+.vibe-resize-handle {
+    flex: 0 0 auto;
+    width: 24px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    cursor: col-resize;
+    z-index: 9999 !important;
+    /* Force it to the absolute top */
+    margin: 0 -11px;
+    pointer-events: auto !important;
+    /* Ensure it stays interactive */
+}
+
+.vibe-handle-bar {
+    width: 3px;
+    height: 100%;
+    background-color: rgba(0, 242, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 99px;
+}
+
+.vibe-resize-handle:hover .vibe-handle-bar,
+.vibe-resize-handle[data-resize-handle-active] .vibe-handle-bar {
+    width: 4px;
+    background-color: #00f2ff;
+    box-shadow:
+        0 0 12px #00f2ff,
+        0 0 24px rgba(0, 242, 255, 0.6);
+}
+
+.vibe-resize-handle:active .vibe-handle-bar {
+    width: 5px;
+    background-color: #00f2ff;
+    box-shadow:
+        0 0 16px #00f2ff,
+        0 0 32px rgba(0, 242, 255, 0.8);
+}

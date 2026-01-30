@@ -1,0 +1,72 @@
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.notification-toast {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: all;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.notification-toast:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+}
+
+.notification-toast.success {
+    border-left: 4px solid #4caf50;
+}
+
+.notification-toast.error {
+    border-left: 4px solid #f44336;
+}
+
+.notification-toast.info {
+    border-left: 4px solid var(--accent-cyan);
+}
+
+.notification-toast.warning {
+    border-left: 4px solid #ff9800;
+}
+
+.toast-icon {
+    font-size: 1.5rem;
+}
+
+.toast-message {
+    color: white;
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+}

@@ -1,0 +1,83 @@
+.error-boundary-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+}
+
+.error-card {
+    max-width: 500px;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.error-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.error-card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+}
+
+.error-card p {
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.retry-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.retry-btn:hover {
+    background: var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.error-details {
+    margin-top: 2rem;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.error-details summary {
+    cursor: pointer;
+    color: var(--accent-cyan);
+    margin-bottom: 0.5rem;
+}
+
+.error-details pre {
+    color: #ff6b6b;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}

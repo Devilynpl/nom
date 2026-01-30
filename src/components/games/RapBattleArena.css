@@ -1,0 +1,193 @@
+.arena-lobby {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.arena-hero {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4rem;
+    border-radius: 32px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 77, 77, 0.3);
+    max-width: 600px;
+    width: 100%;
+}
+
+.arena-hero h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 3rem;
+    color: #ff4d4d;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.battle-btn {
+    background: #ff4d4d;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 1.5rem 4rem;
+    border: none;
+    border-radius: 50px;
+    margin-top: 2rem;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(255, 77, 77, 0.4);
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.battle-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 77, 77, 0.6);
+}
+
+.rank-badge {
+    margin-top: 2rem;
+    color: #cd7f32;
+    /* Bronze */
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid #cd7f32;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.arena-queue {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.arena-queue h2 {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.arena-battle {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+.battle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #ff4d4d;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+}
+
+.player.p2 {
+    align-items: flex-end;
+}
+
+.player .name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.player .score {
+    color: #ff4d4d;
+    font-family: monospace;
+}
+
+.vs-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.battle-feed {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.battle-bubble {
+    max-width: 80%;
+    padding: 1.5rem;
+    border-radius: 0 20px 20px 20px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #ff4d4d;
+    color: white;
+}
+
+.battle-bubble.mine {
+    align-self: flex-end;
+    border-radius: 20px 0 20px 20px;
+    border-left: none;
+    border-right: 4px solid #00f2ff;
+    background: rgba(0, 242, 255, 0.1);
+}
+
+.bubble-meta {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.bubble-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.battle-input {
+    display: flex;
+    padding: 1rem;
+    background: black;
+    gap: 1rem;
+    border-top: 1px solid #333;
+}
+
+.battle-input input {
+    flex: 1;
+    background: #111;
+    border: 1px solid #333;
+    padding: 1rem;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+.battle-input input:focus {
+    outline: none;
+    border-color: #ff4d4d;
+}
+
+.battle-input button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    width: 60px;
+    border-radius: 8px;
+    cursor: pointer;
+}

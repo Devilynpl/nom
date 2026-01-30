@@ -1,0 +1,384 @@
+.sidebar-container {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    visibility: visible !important;
+    display: flex !important;
+    opacity: 1 !important;
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
+}
+
+.sidebar-container:hover {
+    opacity: 0.8 !important;
+}
+
+.sidebar-container:active {
+    opacity: 1 !important;
+}
+
+/* Prevent global .glass:hover from darkening the sidebar */
+.sidebar-container.glass:hover {
+    background: var(--glass-bg) !important;
+    border-color: var(--glass-border) !important;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: var(--text-muted);
+    /* Changed from hardcoded white */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 4px;
+    opacity: 1 !important;
+}
+
+.nav-item .icon {
+    color: var(--accent-cyan);
+    /* Changed from hardcoded cyan */
+    opacity: 1 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.nav-item:hover {
+    /* background: var(--glass-shine); Removed background change on hover */
+    color: var(--text-main);
+}
+
+.nav-item.active {
+    background: linear-gradient(90deg, var(--primary-glow) 0%, transparent 100%);
+    box-shadow: inset 4px 0 0 var(--primary);
+    color: var(--text-main);
+}
+
+@font-face {
+    font-family: 'Doctor Glitch';
+    src: url('../../Doctor Glitch.otf') format('opentype');
+}
+
+.nav-item .label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    /* Increased weight slightly to match the previous bold look */
+    /* font-family: 'Doctor Glitch', sans-serif; */
+    font-size: 14px;
+    font-weight: 500;
+    color: inherit;
+    /* Inherit from nav-item */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.5px;
+    opacity: 1;
+}
+
+/* Ensure the logo area looks premium for the 700px width */
+.logo {
+    border-bottom: 1px solid var(--glass-border);
+    margin-bottom: 20px;
+}
+
+.vibe-logo-img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: block;
+}
+
+[data-theme='dark'] .vibe-logo-img {
+    filter: drop-shadow(0 0 12px var(--primary-glow));
+}
+
+.logo:hover .vibe-logo-img {
+    transform: scale(1.08) rotate(-1deg);
+    filter: drop-shadow(0 0 15px var(--primary-glow));
+}
+
+.vibe-text {
+    text-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* --- FOOTER & SWITCHES --- */
+.sidebar-footer {
+    border-top: 1px solid var(--glass-border);
+    margin-top: auto;
+    background: var(--glass-bg);
+    /* Use glass variable */
+}
+
+.switches-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px;
+    background: var(--bg-deep);
+    /* Use theme bg instead of black */
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+}
+
+/* --- PREMIUM SWITCHES FROM SWITCHES.TSX --- */
+.switch-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.switch-label {
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Base Switch styling */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-deep);
+    transition: .4s;
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    left: 2px;
+    bottom: 2.5px;
+    z-index: 2;
+    background-color: var(--text-main);
+    transition: .4s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 9px;
+    font-weight: 800;
+    color: var(--bg-deep);
+    font-family: var(--font-body);
+}
+
+.icon-slot {
+    position: absolute;
+    top: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 10px;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.flag-icon {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.slot-left {
+    left: 5px;
+}
+
+.slot-right {
+    left: 34px;
+}
+
+.switch:hover .flag-icon {
+    animation: tilt 2s linear infinite;
+}
+
+@keyframes tilt {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.switch input:checked+.slider {
+    background-color: var(--primary-glow);
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(30px);
+}
+
+/* Language Switch Specifics */
+#switch-lang .input:not(:checked)+.slider:before {
+    content: "PL";
+}
+
+#switch-lang .input:checked+.slider:before {
+    content: "EN";
+}
+
+/* Effect Switch Specifics */
+#switch-fx .slider {
+    background-color: rgba(255, 23, 68, 0.2);
+}
+
+#switch-fx .input:not(:checked)+.slider:before {
+    content: "OFF";
+}
+
+#switch-fx .input:checked+.slider:before {
+    content: "ON";
+}
+
+#switch-fx .input:checked+.slider {
+    background-color: rgba(0, 200, 83, 0.2);
+    border-color: #00c853;
+}
+
+/* --- Theme Toggle Button (The SVG Cloud/Night one) --- */
+#theme-toggle-button {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+    cursor: pointer;
+}
+
+#toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#toggle:checked+svg #container {
+    fill: #2b4360;
+}
+
+#toggle:checked+svg #button {
+    transform: translate(28px, 2.333px);
+}
+
+#toggle:checked+svg #sun {
+    opacity: 0;
+}
+
+#toggle:not(:checked)+svg #moon {
+    opacity: 0;
+}
+
+#toggle:checked+svg #cloud {
+    opacity: 0;
+}
+
+#toggle:not(:checked)+svg #stars {
+    opacity: 0;
+}
+
+.controls-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+}
+
+.user-profile .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--primary));
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Light Mode Specific Overrides */
+[data-theme='light'] .nav-item {
+    color: #000000 !important;
+}
+
+[data-theme='light'] .nav-item .icon {
+    color: #000000 !important;
+}
+
+[data-theme='light'] .nav-item:hover {
+    color: #000000 !important;
+    background: transparent !important;
+}
+
+[data-theme='light'] .nav-item.active {
+    color: #000000 !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+    box-shadow: inset 4px 0 0 #000000 !important;
+}

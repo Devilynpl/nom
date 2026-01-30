@@ -1,0 +1,149 @@
+.lyric-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+}
+
+.tool-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tool-header h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    background: linear-gradient(to right, #fff, #00f2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 242, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+.tool-interface {
+    padding: 2rem;
+    border-radius: 24px;
+    min-height: 400px;
+}
+
+.input-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.input-area input {
+    flex: 2;
+    min-width: 200px;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.mode-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.mode-toggle button {
+    padding: 0 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.mode-toggle button.active {
+    background: var(--primary-cyan);
+    color: black;
+}
+
+.generate-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 0 2rem;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.generate-btn:active {
+    transform: scale(0.95);
+}
+
+.results-area {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    min-height: 200px;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: var(--text-secondary);
+    gap: 1rem;
+}
+
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.result-tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid transparent;
+}
+
+.result-tag:hover {
+    background: rgba(0, 242, 255, 0.15);
+    border-color: rgba(0, 242, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.copy-icon {
+    opacity: 0.5;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

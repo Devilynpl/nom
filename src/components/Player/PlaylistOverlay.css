@@ -1,0 +1,170 @@
+.playlist-overlay {
+    position: absolute;
+    bottom: 120%;
+    /* Above the player */
+    left: 0;
+    right: 0;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+}
+
+.playlist-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+.playlist-header .subtitle {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(90deg);
+}
+
+.playlist-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+}
+
+.playlist-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.playlist-item.active {
+    background: rgba(0, 242, 255, 0.1);
+}
+
+.item-index {
+    width: 30px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+.item-art {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.playlist-item.active .item-art {
+    background: var(--accent-cyan);
+    color: black;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h4 {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
+
+.item-info p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.active-indicator {
+    color: var(--accent-cyan);
+}
+
+/* Playing Bars Animation */
+.playing-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 12px;
+}
+
+.playing-bars .bar {
+    width: 2px;
+    background: var(--accent-cyan);
+    animation: bounce 0.6s ease-in-out infinite alternate;
+}
+
+.playing-bars .bar:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.playing-bars .bar:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    from {
+        height: 4px;
+    }
+
+    to {
+        height: 12px;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

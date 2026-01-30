@@ -1,0 +1,168 @@
+.premium-container {
+    padding: 2rem;
+    padding-bottom: 8rem;
+    text-align: center;
+    color: white;
+}
+
+.premium-header {
+    margin-bottom: 4rem;
+}
+
+.premium-header h1 {
+    font-size: 3rem;
+    font-family: 'Russo One', sans-serif;
+    margin-bottom: 1rem;
+    background: linear-gradient(to bottom, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.billing-toggle {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 50px;
+}
+
+.billing-toggle span {
+    padding: 10px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.billing-toggle span.active {
+    background: white;
+    color: black;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tier-card {
+    padding: 2.5rem;
+    border-radius: 24px;
+    text-align: left;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+}
+
+.tier-card.highlight {
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    background: linear-gradient(145deg, rgba(0, 242, 255, 0.05) 0%, rgba(0, 0, 0, 0.4) 100%);
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.1);
+}
+
+.badge-pop {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00f2ff;
+    color: black;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.tier-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.tier-icon.cyan {
+    color: #00f2ff;
+    background: rgba(0, 242, 255, 0.1);
+}
+
+.tier-icon.gold {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.price-block {
+    margin: 1rem 0 2rem;
+}
+
+.price-block .price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Russo One', sans-serif;
+}
+
+.price-block .period {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.check-icon {
+    color: #4ade80;
+}
+
+.tier-btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tier-btn.glow {
+    background: white;
+    color: black;
+    border: none;
+}
+
+.tier-btn.outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.tier-btn:hover:not(:disabled) {
+    transform: scale(1.02);
+}
+
+.tier-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

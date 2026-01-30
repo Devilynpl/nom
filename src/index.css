@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Doctor Glitch';
+  src: url('./Doctor Glitch.otf') format('opentype');
+}
+
+.glitch-font {
+  font-family: 'Doctor Glitch', sans-serif;
+  letter-spacing: 1px;
+}
+
+:root {
+  /* --- Ultimate UI: Deep Space Palette --- */
+
+  /* Primary Colors */
+  --bg-deep: #0a0c12;
+  /* Deepest Void */
+  --bg-panel: #101622;
+  /* Interactive Panels */
+  --bg-dark: #0a0c12;
+  /* Compatibility */
+
+  /* Brand Colors */
+  --primary: #2b6cee;
+  /* Royal Blue */
+  --primary-glow: rgba(43, 108, 238, 0.5);
+  --accent-cyan: #2b6cee;
+  /* Remap old cyan to Royal Blue */
+  --accent-purple: #7928ca;
+  /* Secondary Cosmic Purple */
+
+  /* Text */
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(16, 22, 34, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shine: rgba(255, 255, 255, 0.03);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Status */
+  --status-success: #10b981;
+  --status-error: #ef4444;
+}
+
+[data-theme='light'] {
+  /* Backgrounds - Light & Airy */
+  --bg-deep: #f5f3ed;
+  /* Main Background - Snow White */
+  --bg-panel: #ffffff;
+  /* Panels / Cards - Pure White */
+  --bg-dark: #f1f5f9;
+  /* Subtle Depth */
+
+  /* Glassmorphism - Lighter Frost */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-shine: rgba(255, 255, 255, 0.4);
+
+  /* Accents - Vibrant & Energetic */
+  --primary: #2563eb;
+  /* Bright Royal Blue */
+  --primary-glow: rgba(37, 99, 235, 0.15);
+  --accent-cyan: #2563eb;
+  /* Mapped to Bright Blue */
+  --accent-purple: #7c3aed;
+  /* Electric Purple */
+
+  /* Text Colors - High Contrast */
+  --text-main: #1e293b;
+  /* Dark Slate */
+  --text-muted: #64748b;
+  /* Cool Gray */
+  --text-dim: #94a3b8;
+  /* Light Gray */
+
+  /* Status Indicators */
+  --status-success: #059669;
+  /* Deep Emerald */
+  --status-error: #dc2626;
+  /* Strong Red */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* background-color: var(--bg-deep); */
+  background-color: transparent;
+  /* Changed to allow WaterBackground visibility */
+  color: var(--text-main);
+  font-family: var(--font-body);
+
+  /* Subtle Cosmic Background - commented out to let Canvas shine */
+  /* background-image:
+    radial-gradient(circle at 15% 50%, rgba(43, 108, 238, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(121, 40, 202, 0.08), transparent 25%);
+  background-attachment: fixed; */
+}
+
+@keyframes aurora-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Glassmorphism Utility */
+/* Glassmorphism Utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+.glass:hover {
+  background: var(--glass-shine);
+  /* Use variable for hover state */
+  border-color: var(--glass-border);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  /* Tighter tracking for Space Grotesk */
+  color: var(--text-main);
+}
+
+.premium-button {
+  background: var(--chrome-silver);
+  border: none;
+  border-radius: 4px;
+  color: #000;
+  padding: 10px 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.premium-button:hover {
+  transform: scale(1.02);
+  background: #fff;
+  box-shadow: 0 0 20px var(--accent-cyan);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 0.6s ease-out forwards;
+}
