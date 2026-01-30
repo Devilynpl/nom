@@ -1,18 +1,14 @@
-JavaScriptimport { defineConfig } from 'vite'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',                    // ← dodaje to – najważniejsze dla deployu
+  base: '/',
 
-  // Konfiguracja testów Vitest (można zostawić tutaj lub przenieść do vite.config.test.js)
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.js',
-    // Opcjonalnie dodaj coverage jeśli chcesz raporty
-    // coverage: { provider: 'v8', reporter: ['text', 'json', 'html'] }
   },
 })  server: {
     headers: {
